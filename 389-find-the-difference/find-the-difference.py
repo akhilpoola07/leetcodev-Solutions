@@ -1,4 +1,13 @@
-class Solution:
-
-  def findTheDifference(self, s: str, t: str) -> str:
-    return chr(sum(map(ord, t)) - sum(map(ord, s)))
+class Solution(object):
+    def findTheDifference(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: str
+        """
+        res = 0
+        for char in s:
+            res ^= ord(char)
+        for char in t:
+            res ^= ord(char)
+        return chr(res)
